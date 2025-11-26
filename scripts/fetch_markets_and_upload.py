@@ -61,4 +61,4 @@ def serializer(obj):
 serialized = json.dumps([asdict(market) for market in mapped_markets], default=serializer)
 payload = json.loads(serialized)
 
-requests.post("http://localhost:8080/market", json=payload)
+requests.post("http://localhost:1306/market", json=payload)
