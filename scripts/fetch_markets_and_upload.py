@@ -49,6 +49,8 @@ def get_markets(**args):
     response = requests.get(url, params=args)
     return response.json()
 
+markets = get_markets(closed=closed, volume_num_min=volume_num_min, end_date_min=end_date_min, limit=limit, active=True, acceptingOrders=True)
+
 mapped_markets = map_markets_dict_to_markets(markets)
 
 def serializer(obj):
