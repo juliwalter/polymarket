@@ -1,0 +1,23 @@
+services:
+  polymarket-app:
+    image: polymarket-app:1.0.0
+    container_name: polymarket-app
+    restart: unless-stopped
+    env_file: ".webapp.env"
+    environment:
+      POSTGRES_CONNECTION_STRING: jdbc:postgresql://polymarket-db:5432/polymarket
+    ports:
+      - "1306:8080"
+    volumes:
+      - ./env/.webapp.env:/.webapp.env:ro
+
+  polymarket-db:
+    image: postgres:16
+    container_name: polymarket-db
+    restart: unless-stopped
+    env_file: ".db.env"
+    environment:
+      POSTGRES_DB: polymarket
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+      - ./env/.db.env:/.db.env:ro

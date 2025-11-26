@@ -1,0 +1,19 @@
+server.port: ${PORT:8080}
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/polymarket
+    username: dev
+    password: dev
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+polymarket:
+  market:
+    url: "https://polymarket.com/market/"
+    service:
+      mock:
+        enabled: false
