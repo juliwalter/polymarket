@@ -221,8 +221,6 @@ public class MarketDetail extends VerticalLayout {
 
                 XAxis xAxis = new XAxis(DataType.TIME);
                 YAxis yAxis = new YAxis(DataType.NUMBER);
-                yAxis.setMin(0);
-                yAxis.setMax(1);
                 RectangularCoordinate rc = new RectangularCoordinate(xAxis, yAxis);
 
                 LineChart firstLineChart = getLineChart(market.getFirstOutcome(), xValues, yValuesFirst);
