@@ -9,5 +9,6 @@ import java.util.UUID;
 @Repository
 public interface MarketRepository extends JpaRepository<Market, UUID> {
     Market findByConditionId(String conditionId);
+
     boolean existsByConditionId(String conditionId);
 }
