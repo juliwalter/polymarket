@@ -46,6 +46,6 @@ public class Market {
     private String secondOutcome;
 
     @Builder.Default
-    @ElementCollection(fetch = FetchType.EAGER)
+    @ElementCollection(fetch = FetchType.LAZY)
     List<MarketSnapshot> snapshots = new ArrayList<>();
 }
