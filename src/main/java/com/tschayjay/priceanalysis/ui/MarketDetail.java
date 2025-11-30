@@ -212,6 +212,7 @@ public class MarketDetail extends VerticalLayout {
 
                 LocalDateTime[] xValues = market.getSnapshots()
                         .stream()
+                        .sorted(Comparator.comparing(MarketSnapshot::getTimestamp))
                         .map(MarketSnapshot::getTimestamp)
                         .map(instant -> LocalDateTime.ofInstant(instant, ZoneId.systemDefault()))
                         .toArray(LocalDateTime[]::new);
@@ -238,6 +239,7 @@ public class MarketDetail extends VerticalLayout {
         private Number[] extractPrices(Market market, Function<MarketSnapshot, Double> extraction) {
             return market.getSnapshots()
                     .stream()
+                    .sorted(Comparator.comparing(MarketSnapshot::getTimestamp))
                     .map(extraction)
                     .toArray(Number[]::new);
         }
