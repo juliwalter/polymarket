@@ -11,6 +11,8 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import org.springframework.beans.factory.annotation.Value;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Comparator;
 import java.util.List;
 
@@ -49,7 +51,9 @@ class MarketView extends VerticalLayout {
                 .setResizable(true)
                 .setSortable(true);
 
-        marketGrid.addColumn(market -> "%.3f".formatted(marketService.calculateTrend(market)))
+        marketGrid.addColumn(market -> BigDecimal.valueOf(marketService.calculateTrend(market))
+                        .setScale(2, RoundingMode.HALF_UP)
+                        .doubleValue())
                 .setHeader("Trend")
                 .setAutoWidth(true)
                 .setResizable(true)

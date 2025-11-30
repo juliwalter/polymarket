@@ -230,6 +230,7 @@ public class MarketDetail extends VerticalLayout {
                 secondLineChart.plotOn(rc);
 
                 chart.add(firstLineChart, secondLineChart);
+                chart.getDefaultLegend().hide(secondLineChart);
                 add(chart);
             }
         }
