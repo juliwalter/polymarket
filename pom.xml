@@ -37,6 +37,21 @@
             <artifactId>vaadin</artifactId>
         </dependency>
         <dependency>
+            <groupId>software.xdev</groupId>
+            <artifactId>vaadin-grid-filter</artifactId>
+            <version>2.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>software.xdev</groupId>
+            <artifactId>vaadin-grid-exporter</artifactId>
+            <version>3.2.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.vaadin.addons.flowingcode</groupId>
+            <artifactId>grid-helpers</artifactId>
+            <version>1.4.5</version>
+        </dependency>
+        <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
         </dependency>
